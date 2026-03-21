@@ -60,7 +60,7 @@ ADG Website/
    ```bash
    # Terminal 1 - Backend
    cd backend
-   nodemon server.js
+   node server.js
 
    # Terminal 2 - Frontend
    cd frontend
