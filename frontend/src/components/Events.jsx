@@ -112,14 +112,14 @@ const Events = () => {
             Want to stay updated with our latest events?
           </p>
           <button
-            onClick={() => {
-              const element = document.querySelector('#contact')
-              element?.scrollIntoView({ behavior: 'smooth' })
-            }}
-            className="px-8 py-4 bg-white text-gray-800 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
-          >
-            Join Our Community
-          </button>
+  onClick={() => {
+    const element = document.querySelector('#contact')
+    element?.scrollIntoView({ behavior: 'smooth' })
+  }}
+  className="hero-cta-btn"
+>
+  Join Our Community
+</button>
         </motion.div>
       </div>
     </section>
@@ -127,4 +127,3 @@ const Events = () => {
 }
 
 export default Events
-

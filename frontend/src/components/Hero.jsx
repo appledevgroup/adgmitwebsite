@@ -74,29 +74,27 @@ const Hero = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 25 }}
                 onClick={() =>
                   document.querySelector('#events')?.scrollIntoView({ behavior: 'smooth' })
                 }
-                className="px-8 py-4 bg-white
-                           text-gray-900 font-semibold rounded-lg shadow-md
-                           border border-gray-300 hover:shadow-lg transition-all"
+                className="hero-cta-btn focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gray-800/40"
               >
-                Explore Events
+                <span className="relative z-[1]">Explore Events</span>
               </motion.button>
 
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 25 }}
                 onClick={() =>
                   document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
                 }
-                className="px-8 py-4 bg-white
-                           text-gray-900 font-semibold rounded-lg shadow-md
-                           border border-gray-300 hover:shadow-lg transition-all"
+                className="hero-cta-btn focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gray-800/40"
               >
-                Get in Touch
+                <span className="relative z-[1]">Get in Touch</span>
               </motion.button>
             </div>
           </motion.div>

@@ -124,9 +124,11 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full px-8 py-4 bg-white text-black font-semibold rounded-lg shadow-lg hover:shadow-xl border-2 border-black transition-all duration-300 disabled:opacity-50"
+                className="hero-cta-btn w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gray-800/40"
               >
-                {isSubmitting ? 'Sending...' : 'Send Message'}
+                <span className="relative z-[1]">
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                </span>
               </button>
 
               {/* FOLLOW US */}

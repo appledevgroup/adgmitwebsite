@@ -1,7 +1,42 @@
+import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import teamImage from '../assets/image.png'
 
+const STEVE_JOBS_QUOTE = '\u201cStay hungry, stay foolish.\u201d'
+
 const About = () => {
+  const quoteRef = useRef(null)
+  const [quoteVisible, setQuoteVisible] = useState(false)
+  const [quoteIndex, setQuoteIndex] = useState(0)
+
+  useEffect(() => {
+    const el = quoteRef.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setQuoteVisible(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.35, rootMargin: '0px 0px -8% 0px' }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    if (!quoteVisible) return
+    if (quoteIndex >= STEVE_JOBS_QUOTE.length) return
+    const timeout = setTimeout(() => {
+      setQuoteIndex((i) => i + 1)
+    }, 48)
+    return () => clearTimeout(timeout)
+  }, [quoteVisible, quoteIndex])
+
+  const typedQuote = STEVE_JOBS_QUOTE.slice(0, quoteIndex)
+  const quoteTyping = quoteVisible && quoteIndex < STEVE_JOBS_QUOTE.length
+
   const features = [
     {
       title: 'Innovation',
@@ -82,22 +117,46 @@ const About = () => {
           </div>
         </motion.div>
 
-        {/* Quote Section */}
+        {/* Quote Section — typewriter starts when scrolled into view */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9 }}
-          className="text-center max-w-4xl mx-auto mb-18"
+          className="text-center max-w-4xl mx-auto mb-16"
         >
-          <blockquote className="text-2xl md:text-3xl font-light italic text-gray-800 leading-relaxed">
-            “Stay hungry, stay foolish.”
+          <blockquote
+            ref={quoteRef}
+            className="text-2xl md:text-3xl font-light italic text-gray-800 leading-relaxed
+                       min-h-[3.5rem] md:min-h-[4.5rem] flex flex-col items-center justify-center"
+          >
+            <span className="inline-flex items-center justify-center flex-wrap gap-0">
+              {typedQuote}
+              {quoteTyping && (
+                <span
+                  className="inline-block ml-0.5 align-baseline not-italic"
+                  style={{
+                    width: '2px',
+                    height: '0.85em',
+                    backgroundColor: 'currentColor',
+                    animation: 'about-quote-blink 1s infinite',
+                  }}
+                  aria-hidden
+                />
+              )}
+            </span>
           </blockquote>
-          <p className="mt-4 text-gray-500 text-lg">
+          <p className="mt-4 text-gray-500 text-lg not-italic">
             — Steve Jobs
           </p>
         </motion.div>
 
+        <style>{`
+          @keyframes about-quote-blink {
+            0%, 50%, 100% { opacity: 1; }
+            25%, 75% { opacity: 0; }
+          }
+        `}</style>
       </div>
     </section>
   )

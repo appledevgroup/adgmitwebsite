@@ -13,10 +13,47 @@
   }
 }
 
+@layer components {
+  .hero-cta-btn {
+    position: relative;
+    overflow: hidden;
+
+    /* ✅ back to original white button */
+    @apply px-8 py-4 bg-white text-gray-900 font-semibold rounded-lg shadow-md border border-gray-300;
+
+    transition:
+      color 0.35s ease,
+      border-color 0.35s ease,
+      box-shadow 0.35s ease,
+      background 0.35s ease,
+      transform 0.35s ease;
+  }
+
+  .hero-cta-btn:hover:not(:disabled) {
+    /* ✅ gradient only on hover */
+    background: linear-gradient(90deg, #ff2d55, #7b2cff);
+    background-size: 200% 100%;
+    background-position: right center;
+
+    @apply text-white shadow-lg;
+    border-color: transparent;
+
+    /* subtle lift like reference */
+    transform: translateY(-2px);
+
+    /* glow */
+    box-shadow:
+      0 8px 25px rgba(123, 44, 255, 0.4),
+      0 0 20px rgba(255, 45, 85, 0.3);
+  }
+
+  .hero-cta-btn:disabled {
+    @apply opacity-50 cursor-not-allowed;
+  }
+}
+
 @layer utilities {
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-black to-gray-800;
   }
 }
-
-
