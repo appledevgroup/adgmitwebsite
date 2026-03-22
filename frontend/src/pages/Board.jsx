@@ -38,22 +38,34 @@ const Board = () => {
               transition={{ type: "spring", stiffness: 300 }}
               className="bg-white p-6 rounded-2xl shadow-lg"
             >
-              {/* <div className="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-4" /> */}
               <img
                 src={member["Attach photo"]}
                 alt={member["Name"]}
-                className="h-20 w-20 mx-auto rounded-full mb-4"
+                className="h-35 w-35 mx-auto mb-4 border-2 border-black rounded-lg"
               />
-
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-gray-900 mt-4">
                 {member["Name"]}
               </h3>
-              <p className="text-gray-600">{member["Board position"]}</p>
-              <a href={member["Instagram Link"]}>Instagram</a>
-              <br />
-              <a href={member["Linkedin Profile link"]}>Linkedin</a>
-              <br />
-              <p>"{member["One Quote"]}"</p>
+              <p className="text-sm font-medium text-purple-600 mb-4">
+                {member["Board position"]}
+              </p>
+              <p className="text-gray-600 italic text-sm mb-4">
+                "{member["One Quote"]}"
+              </p>
+              <div className="flex gap-3 justify-center mt-4">
+                <a
+                  href={member["Instagram Link"]}
+                  className="px-4 py-2 text-white bg-black text-sm rounded-lg hover:bg-pink-600 transition"
+                >
+                  Instagram
+                </a>
+                <a
+                  href={member["Linkedin Profile link"]}
+                  className="px-4 py-2 bg-blue-500 text-white text-sm rounded-lg hover:bg-blue-600 transition"
+                >
+                  LinkedIn
+                </a>
+              </div>
             </motion.div>
           ))}
         </div>
