@@ -1,3 +1,4 @@
+import "@fontsource/dancing-script";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -25,9 +26,9 @@ const Board = () => {
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-4xl md:text-5xl font-bold mb-6 text-gradient"
+          className="text-4xl md:text-5xl mb-6 text-gradient"
         >
-          Meet the Board
+          Meet <span style={{fontFamily: "Dancing Script, cursive", fontSize: "1.2em"}}>the</span> Board
         </motion.h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 mb-24">
@@ -36,7 +37,7 @@ const Board = () => {
               key={i}
               whileHover={{ y: -6 }}
               transition={{ type: "spring", stiffness: 300 }}
-              className="bg-white p-6 rounded-2xl shadow-lg"
+              className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition"
             >
               <img
                 src={member["Attach photo"]}
@@ -46,22 +47,22 @@ const Board = () => {
               <h3 className="text-xl font-semibold text-gray-900 mt-4">
                 {member["Name"]}
               </h3>
-              <p className="text-sm font-medium text-purple-600 mb-4">
+              <p className="text-sm font-medium text-gray-500 mb-4">
                 {member["Board position"]}
               </p>
-              <p className="text-gray-600 italic text-sm mb-4">
+              <p className="italic text-sm mb-4" style={{color: "#9C7B5A"}}>
                 "{member["One Quote"]}"
               </p>
               <div className="flex gap-3 justify-center mt-4">
                 <a
                   href={member["Instagram Link"]}
-                  className="px-4 py-2 text-white bg-black text-sm rounded-lg hover:bg-pink-600 transition"
+                  className="px-4 py-2 bg-amber-50 text-gray-900 text-sm rounded-lg border border-gray-400 hover:bg-amber-100 transition w-28"
                 >
                   Instagram
                 </a>
                 <a
                   href={member["Linkedin Profile link"]}
-                  className="px-4 py-2 bg-blue-500 text-white text-sm rounded-lg hover:bg-blue-600 transition"
+                  className="px-4 py-2 bg-amber-50 text-gray-900 text-sm rounded-lg border border-gray-400 hover:bg-amber-100 transition w-28"
                 >
                   LinkedIn
                 </a>
