@@ -4,11 +4,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import boardMembersData from "../assets/boardinfo.json";
 
-const managementCommittee = [
-  { name: "Example 1", role: "Management Committee Member" },
-  { name: "Example 2", role: "Management Committee Member" },
-  { name: "Example 3", role: "Management Committee Member" },
-];
+
 
 const Board = () => {
   const [boardMembers, setBoardMembers] = useState([]);
@@ -71,32 +67,8 @@ const Board = () => {
           ))}
         </div>
 
-        {/* Management Committee Section */}
-        <motion.h2
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold mb-6 text-gradient"
-        >
-          Meet the Management Committee
-        </motion.h2>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
-          {managementCommittee.map((member, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ y: -6 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="bg-white p-6 rounded-2xl shadow-md"
-            >
-              <div className="w-20 h-20 mx-auto rounded-full bg-gray-200 mb-4" />
-              <h3 className="text-lg font-semibold text-gray-900">
-                {member.name}
-              </h3>
-              <p className="text-gray-600 text-sm">{member.role}</p>
-            </motion.div>
-          ))}
-        </div>
+        
+         
       </div>
     </section>
   );
