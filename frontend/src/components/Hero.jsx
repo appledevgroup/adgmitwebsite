@@ -86,7 +86,7 @@ const Hero = () => {
                            text-gray-900 font-semibold rounded-lg shadow-md
                            border border-gray-300 hover:shadow-lg transition-all"
               >
-                Explore Events
+                Explore Our Events
               </motion.button>
 
               <motion.button
