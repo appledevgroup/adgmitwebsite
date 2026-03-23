@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 
+
 const Hero = () => {
   const fullText = "Apple Developers' Group"
   const [displayedText, setDisplayedText] = useState('')
@@ -20,8 +21,10 @@ const Hero = () => {
     <section
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden
-                 bg-creme-light pt-24"
+                  pt-24"
     >
+      
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-4xl mx-auto">
           <motion.div
@@ -44,7 +47,7 @@ const Hero = () => {
             <h1
               className="text-4xl sm:text-5xl md:text-6xl
                          font-medium tracking-tight mb-6
-                         text-gray-800 leading-relaxed
+                         font-bold text-gray-950 leading-relaxed
                          flex justify-center "
             >
               <span className="flex items-center">
@@ -63,11 +66,11 @@ const Hero = () => {
               </span>
             </h1>
 
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-6 leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-800 font-medium mb-6 leading-relaxed">
               Empowering Innovation, Fostering Excellence, Building the Future
             </p>
 
-            <p className="text-sm sm:text-base text-gray-700 mb-12 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base text-gray-800 font-medium mb-12 max-w-2xl mx-auto leading-relaxed">
               Join us in exploring cutting-edge technologies, collaborating on exciting projects,
               and growing together as a community of passionate developers.
             </p>

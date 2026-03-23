@@ -1,7 +1,35 @@
 import { motion } from 'framer-motion'
+import { useEffect, useState, useRef } from 'react'
 import teamImage from '../assets/image.png'
+import appleBg from '../assets/apple-bg.png'
 
 const About = () => {
+  const quoteText = '"Stay hungry, stay foolish."'
+  const [displayedQuote, setDisplayedQuote] = useState('')
+  const [quoteIndex, setQuoteIndex] = useState(0)
+  const [hasStarted, setHasStarted] = useState(false)
+  const quoteRef = useRef(null)
+
+  // Start typing only when the quote section scrolls into view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setHasStarted(true) },
+      { threshold: 0.5 }
+    )
+    if (quoteRef.current) observer.observe(quoteRef.current)
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    if (!hasStarted) return
+    if (quoteIndex < quoteText.length) {
+      const timeout = setTimeout(() => {
+        setDisplayedQuote((prev) => prev + quoteText[quoteIndex])
+        setQuoteIndex(quoteIndex + 1)
+      }, 60)
+      return () => clearTimeout(timeout)
+    }
+  }, [hasStarted, quoteIndex])
   const features = [
     {
       title: 'Innovation',
@@ -22,8 +50,20 @@ const About = () => {
   ]
 
   return (
-    <section id="about" className="py-20 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      id="about"
+      className="relative py-20"
+      style={{
+        backgroundImage: `url(${appleBg})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'local',
+      }}
+    >
+      {/* Overlay so content stays readable */}
+      <div className="absolute inset-0 bg-white/70 backdrop-blur-sm" />
+
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Heading */}
         <motion.div
@@ -63,8 +103,6 @@ const About = () => {
           ))}
         </div>
 
-        
-
         {/* Team Image */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -84,19 +122,38 @@ const About = () => {
 
         {/* Quote Section */}
         <motion.div
+          ref={quoteRef}
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9 }}
           className="text-center max-w-4xl mx-auto mb-18"
         >
-          <blockquote className="text-2xl md:text-3xl font-light italic text-gray-800 leading-relaxed">
-            “Stay hungry, stay foolish.”
+          <blockquote className="text-2xl md:text-3xl font-light italic text-gray-800 leading-relaxed flex justify-center items-center">
+            <span>{displayedQuote}</span>
+            {quoteIndex < quoteText.length && (
+              <span
+                className="inline-block ml-1"
+                style={{
+                  width: '1px',
+                  height: '1em',
+                  backgroundColor: 'currentColor',
+                  animation: 'blink 1s infinite',
+                }}
+              />
+            )}
           </blockquote>
           <p className="mt-4 text-gray-500 text-lg">
             — Steve Jobs
           </p>
         </motion.div>
+
+        <style>{`
+          @keyframes blink {
+            0%, 50%, 100% { opacity: 1; }
+            25%, 75% { opacity: 0; }
+          }
+        `}</style>
 
       </div>
     </section>
