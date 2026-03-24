@@ -1,21 +1,20 @@
-import { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
-
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 const Hero = () => {
-  const fullText = "Apple Developers' Group"
-  const [displayedText, setDisplayedText] = useState('')
-  const [index, setIndex] = useState(0)
+  const fullText = "Apple Developers' Group";
+  const [displayedText, setDisplayedText] = useState("");
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
     if (index < fullText.length) {
       const timeout = setTimeout(() => {
-        setDisplayedText((prev) => prev + fullText[index])
-        setIndex(index + 1)
-      }, 80)
-      return () => clearTimeout(timeout)
+        setDisplayedText((prev) => prev + fullText[index]);
+        setIndex(index + 1);
+      }, 80);
+      return () => clearTimeout(timeout);
     }
-  }, [index])
+  }, [index]);
 
   return (
     <section
@@ -23,8 +22,6 @@ const Hero = () => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden
                   pt-24"
     >
-      
-
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-4xl mx-auto">
           <motion.div
@@ -57,10 +54,10 @@ const Hero = () => {
                 <span
                   className="inline-block ml-1"
                   style={{
-                    width: '1px',
-                    height: '1em',
-                    backgroundColor: 'currentColor',
-                    animation: 'blink 1s infinite',
+                    width: "1px",
+                    height: "1em",
+                    backgroundColor: "currentColor",
+                    animation: "blink 1s infinite",
                   }}
                 />
               </span>
@@ -71,8 +68,9 @@ const Hero = () => {
             </p>
 
             <p className="text-sm sm:text-base text-gray-800 font-medium mb-12 max-w-2xl mx-auto leading-relaxed">
-              Join us in exploring cutting-edge technologies, collaborating on exciting projects,
-              and growing together as a community of passionate developers.
+              Join us in exploring cutting-edge technologies, collaborating on
+              exciting projects, and growing together as a community of
+              passionate developers.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -80,7 +78,9 @@ const Hero = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() =>
-                  document.querySelector('#events')?.scrollIntoView({ behavior: 'smooth' })
+                  document
+                    .querySelector("#events")
+                    ?.scrollIntoView({ behavior: "smooth" })
                 }
                 className="px-8 py-4 bg-white
                            text-gray-900 font-semibold rounded-lg shadow-md
@@ -93,7 +93,9 @@ const Hero = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() =>
-                  document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
+                  document
+                    .querySelector("#contact")
+                    ?.scrollIntoView({ behavior: "smooth" })
                 }
                 className="px-8 py-4 bg-white
                            text-gray-900 font-semibold rounded-lg shadow-md
@@ -136,7 +138,7 @@ const Hero = () => {
         }
       `}</style>
     </section>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

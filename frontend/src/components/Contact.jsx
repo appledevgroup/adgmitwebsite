@@ -1,47 +1,58 @@
-import { useState } from 'react'
-import { motion } from 'framer-motion'
-import axios from 'axios'
-import { Instagram, Linkedin, Github, Twitter } from 'lucide-react'
+import { useState } from "react";
+import { motion } from "framer-motion";
+import axios from "axios";
+import { Instagram, Linkedin, Github, Twitter } from "lucide-react";
+import appleBg from "../assets/apple-bg.png";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState(null)
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
-  }
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    setSubmitStatus(null)
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
 
     try {
-      await axios.post('/api/feedback', formData)
+      await axios.post("/api/feedback", formData);
       setSubmitStatus({
-        type: 'success',
-        message: 'Thank you! Your message has been sent successfully.',
-      })
-      setFormData({ name: '', email: '', subject: '', message: '' })
+        type: "success",
+        message: "Thank you! Your message has been sent successfully.",
+      });
+      setFormData({ name: "", email: "", subject: "", message: "" });
     } catch {
       setSubmitStatus({
-        type: 'error',
-        message: 'Something went wrong. Please try again later.',
-      })
+        type: "error",
+        message: "Something went wrong. Please try again later.",
+      });
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
-  }
+  };
 
   return (
-    <section id="contact" className="py-20 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      id="contact"
+      className="relative py-20"
+      style={{
+        backgroundImage: `url(${appleBg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "local",
+      }}
+    >
+      <div className="absolute inset-0 bg-white/70 backdrop-blur-sm" />
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -112,9 +123,9 @@ const Contact = () => {
               {submitStatus && (
                 <div
                   className={`p-4 rounded-lg ${
-                    submitStatus.type === 'success'
-                      ? 'bg-green-50 text-green-800'
-                      : 'bg-red-50 text-red-800'
+                    submitStatus.type === "success"
+                      ? "bg-green-50 text-green-800"
+                      : "bg-red-50 text-red-800"
                   }`}
                 >
                   {submitStatus.message}
@@ -126,7 +137,7 @@ const Contact = () => {
                 disabled={isSubmitting}
                 className="w-full px-8 py-4 bg-white text-black font-semibold rounded-lg shadow-lg hover:shadow-xl border-2 border-black transition-all duration-300 disabled:opacity-50"
               >
-                {isSubmitting ? 'Sending...' : 'Send Message'}
+                {isSubmitting ? "Sending..." : "Send Message"}
               </button>
 
               {/* FOLLOW US */}
@@ -157,7 +168,7 @@ const Contact = () => {
                   </a>
 
                   <a
-                    href="https://github.com/adgclub"
+                    href="https://github.com/appledevgroup"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="GitHub"
@@ -165,8 +176,6 @@ const Contact = () => {
                   >
                     <Github size={28} strokeWidth={1.5} />
                   </a>
-
-                 
                 </div>
               </div>
             </form>
@@ -190,7 +199,7 @@ const Contact = () => {
         }
       `}</style>
     </section>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

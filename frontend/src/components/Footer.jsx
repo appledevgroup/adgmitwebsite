@@ -1,27 +1,28 @@
 const Footer = () => {
-  const currentYear = new Date().getFullYear()
+  const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Events', href: '#events' },
-    { name: 'Contact', href: '#contact' },
-  ]
+    { name: "Home", href: "#home" },
+    { name: "About", href: "#about" },
+    { name: "Events", href: "#events" },
+    { name: "Contact", href: "#contact" },
+  ];
 
   const socialLinks = [
-    { name: 'GitHub', href: '#' },
-    { name: 'LinkedIn', href: 'https://www.linkedin.com/company/adg-manipal/posts/?feedView=all' },
-    { name: 'Instagram', href: 'https://www.instagram.com/adg.mit/?hl=en' },
-    
-    
-  ]
+    { name: "GitHub", href: "https://github.com/appledevgroup" },
+    {
+      name: "LinkedIn",
+      href: "https://www.linkedin.com/company/adg-manipal/posts/?feedView=all",
+    },
+    { name: "Instagram", href: "https://www.instagram.com/adg.mit/?hl=en" },
+  ];
 
   const scrollToSection = (href) => {
-    const element = document.querySelector(href)
+    const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+      element.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
 
   return (
     <footer className="bg-gray-900 dark:bg-black text-gray-300 dark:text-gray-400">
@@ -30,19 +31,21 @@ const Footer = () => {
           {/* Logo and Description */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
-              <img 
-                src="/logo.svg" 
-                alt="ADG Logo" 
+              <img
+                src="/logo.svg"
+                alt="ADG Logo"
                 className="w-12 h-12 rounded-lg object-contain"
               />
               <div>
-                <h3 className="text-white dark:text-gray-100 font-bold text-xl">ADG Technical Club</h3>
+                <h3 className="text-white dark:text-gray-100 font-bold text-xl">
+                  ADG Technical Club
+                </h3>
                 <p className="text-xs text-gray-400">Innovation & Excellence</p>
               </div>
             </div>
             <p className="text-gray-400 dark:text-gray-500 mb-4 max-w-md">
-              Empowering innovation, fostering excellence, and building the future 
-              through technology and collaboration.
+              Empowering innovation, fostering excellence, and building the
+              future through technology and collaboration.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((link, index) => (
@@ -80,7 +83,7 @@ const Footer = () => {
             <h4 className="text-white font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-gray-400 dark:text-gray-500">
               <li>adg.mit@manipal.edu</li>
-              
+
               <li>Follow us on instagram</li>
             </ul>
           </div>
@@ -91,8 +94,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
-
+export default Footer;

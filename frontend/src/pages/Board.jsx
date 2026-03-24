@@ -1,15 +1,13 @@
 import "@fontsource/dancing-script";
 import { motion } from "framer-motion";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import boardMembersData from "../assets/boardinfo.json";
-
-
 
 const Board = () => {
   const [boardMembers, setBoardMembers] = useState([]);
 
   useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
     setBoardMembers(boardMembersData);
   }, []);
   return (
@@ -24,7 +22,13 @@ const Board = () => {
           animate={{ opacity: 1, y: 0 }}
           className="text-4xl md:text-5xl mb-6 text-gradient"
         >
-          Meet <span style={{fontFamily: "Dancing Script, cursive", fontSize: "1.2em"}}>the</span> Board
+          Meet{" "}
+          <span
+            style={{ fontFamily: "Dancing Script, cursive", fontSize: "1.2em" }}
+          >
+            the
+          </span>{" "}
+          Board
         </motion.h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 mb-24">
@@ -46,7 +50,7 @@ const Board = () => {
               <p className="text-sm font-medium text-gray-500 mb-4">
                 {member["Board position"]}
               </p>
-              <p className="italic text-sm mb-4" style={{color: "#9C7B5A"}}>
+              <p className="italic text-sm mb-4" style={{ color: "#9C7B5A" }}>
                 "{member["One Quote"]}"
               </p>
               <div className="flex gap-3 justify-center mt-4">
@@ -66,9 +70,6 @@ const Board = () => {
             </motion.div>
           ))}
         </div>
-
-        
-         
       </div>
     </section>
   );
