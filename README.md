@@ -1,4 +1,4 @@
-# ADG Technical Club Website
+# ADG Website
 
 built with the MERN stack (MongoDB, Express, React, Node.js) and Tailwind CSS.
 
