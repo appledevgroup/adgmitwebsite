@@ -163,7 +163,7 @@ hover:text-[#c2a97e]">
             >
               Home
             </button>
-            <button onClick={() => goToSection('about')} className="className=
+            <button onClick={() => goToSection('about')} className="
               block
               w-full
               rounded-lg
@@ -178,7 +178,7 @@ hover:text-[#c2a97e]">
             >
               About
             </button>
-            <button onClick={() => goToSection('events')} className="className=
+            <button onClick={() => goToSection('events')} className="
               block
               w-full
               rounded-lg
@@ -193,7 +193,7 @@ hover:text-[#c2a97e]">
             >
               Events
             </button>
-            <button onClick={() => goToSection('contact')} className="className=
+            <button onClick={() => goToSection('contact')} className="
               block
               w-full
               rounded-lg
@@ -241,6 +241,11 @@ hover:text-[#c2a97e]">
             >
               Board
             </Link>
+            <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-800">
+              <div className="flex justify-center py-2">
+                <ThemeToggle />
+              </div>
+            </div>
           </motion.div>
         )}
       </nav>
