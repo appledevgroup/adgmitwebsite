@@ -41,9 +41,9 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
             <img
-              src="/logo.svg"
+              src="/logo1.svg"
               alt="ADG Logo"
-              className="w-12 h-12 rounded-lg shadow-lg object-contain"
+              className="w-12 h-12 rounded-lg shadow-lg object-cover"
             />
             <div>
               <h1 className="text-xl font-bold text-gradient">ADG</h1>

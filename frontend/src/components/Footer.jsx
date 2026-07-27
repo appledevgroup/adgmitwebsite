@@ -32,9 +32,9 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
               <img
-                src="/logo.svg"
+                src="/logo1.svg"
                 alt="ADG Logo"
-                className="w-12 h-12 rounded-lg object-contain"
+                className="w-16 h-16 rounded-2xl object-cover"
               />
               <div>
                 <h3 className="text-white dark:text-gray-100 font-bold text-xl">
