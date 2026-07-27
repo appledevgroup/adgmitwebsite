@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 const SWIFT_KEYWORDS = [
   'enum', 'self', 'let', 'await', 'extension', 'View',
@@ -18,6 +18,7 @@ const SwiftBackground = () => {
   const animRef = useRef(null)
 
   useEffect(() => {
+
     const canvas = canvasRef.current
     const ctx = canvas.getContext('2d')
 
@@ -89,8 +90,9 @@ const SwiftBackground = () => {
     const CONNECT_DIST = 150
 
     const draw = () => {
+      
       ctx.clearRect(0, 0, W, H)
-
+      const dark = document.documentElement.classList.contains("dark");
       // Move nodes, bounce off full document bounds
       for (const node of nodes) {
         node.x += node.vx
@@ -108,7 +110,9 @@ const SwiftBackground = () => {
           if (dist < CONNECT_DIST) {
             const alpha = (1 - dist / CONNECT_DIST) * 0.18
             ctx.beginPath()
-            ctx.strokeStyle = `rgba(80, 80, 80, ${alpha})`
+            ctx.strokeStyle = dark
+              ? `rgba(255,255,255,${alpha * 0.35})`
+              : `rgba(45,45,45,${alpha * 1.9})`;
             ctx.lineWidth = 0.8
             ctx.moveTo(nodes[i].x, nodes[i].y)
             ctx.lineTo(nodes[j].x, nodes[j].y)
@@ -121,7 +125,9 @@ const SwiftBackground = () => {
       for (const node of nodes) {
         ctx.beginPath()
         ctx.arc(node.x, node.y, node.r, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(60, 60, 60, ${node.opacity})`
+        ctx.fillStyle = dark
+          ? `rgba(255,255,255,${node.opacity * 0.35})`
+          : `rgba(45,45,45,${node.opacity * 1.4})`;
         ctx.fill()
       }
 
@@ -133,7 +139,9 @@ const SwiftBackground = () => {
         if (word.y < 0 || word.y > H) word.vy *= -1
 
         ctx.font = `${word.bold ? '600' : '400'} ${word.fontSize}px 'SF Mono', 'Fira Code', monospace`
-        ctx.fillStyle = `rgba(60, 60, 60, ${word.opacity})`
+        ctx.fillStyle = dark
+          ? `rgba(255,255,255,${word.opacity * 0.22})`
+          : `rgba(30,30,30,${word.opacity * 0.8})`;
         ctx.fillText(word.label, word.x, word.y)
       }
 

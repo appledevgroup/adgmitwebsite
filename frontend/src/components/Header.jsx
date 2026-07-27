@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Link, useLocation } from 'react-router-dom'
+import ThemeToggle from "./ThemeToggle";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -32,8 +33,8 @@ const Header = () => {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-lg'
-          : 'bg-white/80 backdrop-blur-sm'
+          ? "bg-white/95 dark:bg-softBlack/95 backdrop-blur-md shadow-lg dark:shadow-black/40"
+          : "bg-white/80 dark:bg-softBlack/80 backdrop-blur-sm"
       }`}
     >
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -47,40 +48,80 @@ const Header = () => {
             />
             <div>
               <h1 className="text-xl font-bold text-gradient">ADG</h1>
-              <p className="text-xs text-gray-500">Innovation & Excellence</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400">Innovation & Excellence</p>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {/* Scroll links */}
-            <button onClick={() => goToSection('home')} className="nav-link">
+            <button onClick={() => goToSection('home')} className="
+text-gray-900
+dark:text-gray-100
+font-medium
+transition-colors
+duration-200
+hover:text-[#c2a97e]">
               Home
             </button>
-            <button onClick={() => goToSection('about')} className="nav-link">
+            <button onClick={() => goToSection('about')} className="
+text-gray-900
+dark:text-gray-100
+font-medium
+transition-colors
+duration-200
+hover:text-[#c2a97e]">  
               About
             </button>
-            <button onClick={() => goToSection('events')} className="nav-link">
+            <button onClick={() => goToSection('events')} className="
+text-gray-900
+dark:text-gray-100
+font-medium
+transition-colors
+duration-200
+hover:text-[#c2a97e]">
               Events
             </button>
-            <button onClick={() => goToSection('contact')} className="nav-link">
+            <button onClick={() => goToSection('contact')} className="
+text-gray-900
+dark:text-gray-100
+font-medium
+transition-colors
+duration-200
+hover:text-[#c2a97e]">
               Contact
             </button>
 
             {/* Page links */}
-            <Link to="/domains" className="nav-link">
+            <Link to="/domains" className="
+text-gray-900
+dark:text-gray-100
+font-medium
+transition-colors
+duration-200
+hover:text-[#c2a97e]">
               Domains
             </Link>
-            <Link to="/board" className="nav-link">
+            <Link to="/board" className="
+text-gray-900
+dark:text-gray-100
+font-medium
+transition-colors
+duration-200
+hover:text-[#c2a97e]">
               Board
             </Link>
+            <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors"
-            aria-label="Toggle menu"
+            className="md:hidden p-2 rounded-lg
+            text-gray-700 dark:text-gray-300
+            hover:bg-gray-100 dark:hover:bg-gray-800
+            transition-colors"
+              aria-label="Toggle menu"
           >
             <svg
               className="w-6 h-6"
@@ -103,32 +144,108 @@ const Header = () => {
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
-            className="md:hidden py-4 border-t border-gray-200 space-y-2"
+            className="md:hidden py-4
+              border-t border-gray-200 dark:border-gray-800
+              space-y-2"
           >
-            <button onClick={() => goToSection('home')} className="mobile-link">
+            <button onClick={() => goToSection('home')} className="
+              block
+              w-full
+              rounded-lg
+              px-4
+              py-2
+              text-left
+              text-gray-900
+              dark:text-gray-100
+              hover:bg-creme-light
+              dark:hover:bg-gray-800
+              transition-colors"
+            >
               Home
             </button>
-            <button onClick={() => goToSection('about')} className="mobile-link">
+            <button onClick={() => goToSection('about')} className="className=
+              block
+              w-full
+              rounded-lg
+              px-4
+              py-2
+              text-left
+              text-gray-900
+              dark:text-gray-100
+              hover:bg-creme-light
+              dark:hover:bg-gray-800
+              transition-colors"
+            >
               About
             </button>
-            <button onClick={() => goToSection('events')} className="mobile-link">
+            <button onClick={() => goToSection('events')} className="className=
+              block
+              w-full
+              rounded-lg
+              px-4
+              py-2
+              text-left
+              text-gray-900
+              dark:text-gray-100
+              hover:bg-creme-light
+              dark:hover:bg-gray-800
+              transition-colors"
+            >
               Events
             </button>
-            <button onClick={() => goToSection('contact')} className="mobile-link">
+            <button onClick={() => goToSection('contact')} className="className=
+              block
+              w-full
+              rounded-lg
+              px-4
+              py-2
+              text-left
+              text-gray-900
+              dark:text-gray-100
+              hover:bg-creme-light
+              dark:hover:bg-gray-800
+              transition-colors"
+            >
               Contact
             </button>
 
-            <Link to="/domains" className="mobile-link" onClick={() => setIsMobileMenuOpen(false)}>
+            <Link to="/domains" className="
+              block
+              w-full
+              rounded-lg
+              px-4
+              py-2
+              text-left
+              text-gray-900
+              dark:text-gray-100
+              hover:bg-creme-light
+              dark:hover:bg-gray-800
+              transition-colors" 
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
               Domains
             </Link>
-            <Link to="/board" className="mobile-link" onClick={() => setIsMobileMenuOpen(false)}>
+            <Link to="/board" className="
+              block
+              w-full
+              rounded-lg
+              px-4
+              py-2
+              text-left
+              text-gray-900
+              dark:text-gray-100
+              hover:bg-creme-light
+              dark:hover:bg-gray-800
+              transition-colors" 
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
               Board
             </Link>
           </motion.div>
         )}
       </nav>
 
-      {/* Reusable styles */}
+      {/* Reusable styles
       <style>{`
         .nav-link {
           color: black;
@@ -151,7 +268,7 @@ const Header = () => {
           background: #f5f0e8;
           color: #c2a97e;
         }
-      `}</style>
+      `}</style> */}
     </motion.header>
   )
 }

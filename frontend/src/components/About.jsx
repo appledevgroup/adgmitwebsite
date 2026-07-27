@@ -61,7 +61,12 @@ const About = () => {
       }}
     >
       {/* Overlay so content stays readable */}
-      <div className="absolute inset-0 bg-white/70 backdrop-blur-sm" />
+      <div
+        className="absolute inset-0
+                  bg-white/55
+                  dark:bg-black/55
+                  transition-colors duration-300"
+      />
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -76,7 +81,12 @@ const About = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="text-gradient">About Us</span>
           </h2>
-          <p className="text-sm sm:text-base text-gray-700 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base
+            text-gray-700 dark:text-gray-200
+            max-w-3xl mx-auto
+            leading-relaxed
+            transition-colors duration-300"
+          >
             We are a dynamic technical club dedicated to fostering innovation, 
             collaboration, and excellence in technology. We express a primary agenda to educate people about the Apple ecosystem and train them with the Swift language. Besides the Swift platform, we also feel pride in recognizing our highly skilled Android, ML, and Web-Dev coders. We strive to offer the best-in-class mentorship for those who have a zeal to succeed and a passion to develop.
           </p>
@@ -91,12 +101,24 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-gradient-to-br from-creme-light to-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-creme-muted"
-            >
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">
+              className="
+                bg-white/70
+              dark:bg-white/5
+                backdrop-blur-xl
+                p-6
+                rounded-xl
+                border
+                border-white/20
+              dark:border-white/10
+                shadow-xl
+                hover:shadow-xl
+                transition-all
+                duration-300"
+              >
+              <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-white">
                 {feature.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                 {feature.description}
               </p>
             </motion.div>
@@ -109,13 +131,28 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="bg-gradient-to-r from-creme to-creme-warm rounded-2xl p-8 md:p-12 shadow-2xl mb-20"
+          className="
+          bg-white/40
+          dark:bg-white/5
+          backdrop-blur-xl
+          border
+          border-white/20
+          dark:border-white/10
+          rounded-2xl
+          p-8
+          md:p-12
+          shadow-2xl
+          mb-20"
         >
           <div className="flex justify-center">
             <img
               src={teamImage}
               alt="Team Picture"
-              className="rounded-xl shadow-lg max-w-full h-auto"
+              className="rounded-xl
+                shadow-xl
+                dark:shadow-black/50
+                max-w-full
+                h-auto"
             />
           </div>
         </motion.div>
@@ -129,7 +166,7 @@ const About = () => {
           transition={{ duration: 0.9 }}
           className="text-center max-w-4xl mx-auto mb-18"
         >
-          <blockquote className="text-2xl md:text-3xl font-light italic text-gray-800 leading-relaxed flex justify-center items-center">
+          <blockquote className="text-2xl md:text-3xl font-light italic text-gray-800 dark:text-gray-100 leading-relaxed flex justify-center items-center">
             <span>{displayedQuote}</span>
             {quoteIndex < quoteText.length && (
               <span
@@ -143,7 +180,7 @@ const About = () => {
               />
             )}
           </blockquote>
-          <p className="mt-4 text-gray-500 text-lg">
+          <p className="mt-4 text-gray-500 dark:text-gray-400 text-lg">
             — Steve Jobs
           </p>
         </motion.div>

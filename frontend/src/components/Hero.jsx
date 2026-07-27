@@ -43,10 +43,10 @@ const Hero = () => {
             {/* Typing Heading */}
             <h1
               className="text-4xl sm:text-5xl md:text-6xl
-                         font-medium tracking-tight mb-6
-                         font-bold text-gray-950 leading-relaxed
-                         flex justify-center "
-            >
+                        font-bold tracking-tight mb-6
+                        text-gray-950 dark:text-white
+                        leading-relaxed flex justify-center
+                        transition-colors duration-300"            >
               <span className="flex items-center">
                 {displayedText}
 
@@ -63,11 +63,21 @@ const Hero = () => {
               </span>
             </h1>
 
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-800 font-medium mb-6 leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl
+              text-gray-800 dark:text-gray-200
+              font-medium mb-6 leading-relaxed
+              transition-colors duration-300"
+            >
               Empowering Innovation, Fostering Excellence, Building the Future
             </p>
 
-            <p className="text-sm sm:text-base text-gray-800 font-medium mb-12 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base
+              text-gray-700 dark:text-gray-300
+              font-medium mb-12
+              max-w-2xl mx-auto
+              leading-relaxed
+              transition-colors duration-300"
+            >
               Join us in exploring cutting-edge technologies, collaborating on
               exciting projects, and growing together as a community of
               passionate developers.
@@ -82,9 +92,14 @@ const Hero = () => {
                     .querySelector("#events")
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
-                className="px-8 py-4 bg-white
-                           text-gray-900 font-semibold rounded-lg shadow-md
-                           border border-gray-300 hover:shadow-lg transition-all"
+                className="px-8 py-4
+                bg-white dark:bg-white
+                text-gray-900
+                font-semibold
+                rounded-xl
+                border border-gray-300 dark:border-gray-300
+                shadow-md hover:shadow-xl
+                transition-all duration-300"
               >
                 Explore Our Events
               </motion.button>
@@ -97,9 +112,14 @@ const Hero = () => {
                     .querySelector("#contact")
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
-                className="px-8 py-4 bg-white
-                           text-gray-900 font-semibold rounded-lg shadow-md
-                           border border-gray-300 hover:shadow-lg transition-all"
+                className="px-8 py-4
+                bg-white dark:bg-white
+                text-gray-900
+                font-semibold
+                rounded-xl
+                border border-gray-300 dark:border-gray-300
+                shadow-md hover:shadow-xl
+                transition-all duration-300"
               >
                 Get in Touch
               </motion.button>
@@ -119,13 +139,13 @@ const Hero = () => {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 2 }}
-          className="w-6 h-10 border-2 border-gray-700
+          className="w-6 h-10 border-2 border-gray-700 dark:border-gray-400
                      rounded-full flex justify-center"
         >
           <motion.div
             animate={{ y: [0, 12, 0] }}
             transition={{ repeat: Infinity, duration: 2 }}
-            className="w-1 h-3 bg-gray-700 rounded-full mt-2"
+            className="w-1 h-3 bg-gray-700 dark:bg-gray-400 rounded-full mt-2"
           />
         </motion.div>
       </motion.div>

@@ -11,9 +11,13 @@ const Board = () => {
     setBoardMembers(boardMembersData);
   }, []);
   return (
-    <section className="min-h-screen pt-32 pb-20 bg-creme-light">
+    <section className="min-h-screen pt-32 pb-20
+      bg-creme-light
+      dark:bg-black
+      transition-colors duration-300"
+    >
       <div className="container mx-auto px-4 text-center">
-        <p className="text-gray-700 max-w-2xl mx-auto mb-14">
+        <p className="text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mb-14">
           The driving force behind innovation and leadership at ADG.
         </p>
         {/* Board Section */}
@@ -35,34 +39,79 @@ const Board = () => {
           {boardMembers.map((member, i) => (
             <motion.div
               key={i}
-              whileHover={{ y: -6 }}
+              whileHover={{ y: -6, scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300 }}
-              className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition"
+              className="
+              bg-white
+              dark:bg-gray-900
+              p-6
+              rounded-2xl
+              border
+              border-gray-100
+              dark:border-gray-800
+              shadow-lg
+              hover:shadow-xl
+              transition-all
+              duration-300"
             >
               <img
                 src={member["Attach photo"]}
                 alt={member["Name"]}
-                className="h-35 w-35 mx-auto mb-4 border-2 border-black rounded-lg"
+                className="h-32 w-32 mx-auto mb-4 border-2 border-gray-300 dark:border-gray-700 rounded-lg"
               />
-              <h3 className="text-xl font-semibold text-gray-900 mt-4">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mt-4">
                 {member["Name"]}
               </h3>
-              <p className="text-sm font-medium text-gray-500 mb-4">
+              <p className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-4">
                 {member["Board position"]}
               </p>
-              <p className="italic text-sm mb-4" style={{ color: "#9C7B5A" }}>
+              <p className="italic text-sm mb-4 text-amber-700 dark:text-amber-400">
                 "{member["One Quote"]}"
               </p>
               <div className="flex gap-3 justify-center mt-4">
                 <a
+                  target="_blank"
+                  rel="noopener noreferrer"
                   href={member["Instagram Link"]}
-                  className="px-4 py-2 bg-amber-50 text-gray-900 text-sm rounded-lg border border-gray-400 hover:bg-amber-100 transition w-28"
+                  className="
+                  px-4
+                  py-2
+                  bg-amber-50
+                  dark:bg-gray-800
+                  text-gray-900
+                  dark:text-white
+                  text-sm
+                  rounded-lg
+                  border
+                  border-gray-300
+                  dark:border-gray-700
+                  hover:bg-amber-100
+                  dark:hover:bg-gray-700
+                  transition
+                  w-28"
                 >
                   Instagram
                 </a>
                 <a
+                  target="_blank"
+                  rel="noopener noreferrer"
                   href={member["Linkedin Profile link"]}
-                  className="px-4 py-2 bg-amber-50 text-gray-900 text-sm rounded-lg border border-gray-400 hover:bg-amber-100 transition w-28"
+                  className="
+                    px-4
+                    py-2
+                    bg-amber-50
+                    dark:bg-gray-800
+                    text-gray-900
+                    dark:text-white
+                    text-sm
+                    rounded-lg
+                    border
+                    border-gray-300
+                    dark:border-gray-700
+                    hover:bg-amber-100
+                    dark:hover:bg-gray-700
+                    transition
+                    w-28"
                 >
                   LinkedIn
                 </a>
