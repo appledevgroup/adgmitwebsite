@@ -1,30 +1,21 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import {
-  FaApple,
   FaAndroid,
   FaGlobe,
   FaBrain,
-  FaAppStoreIos,
+  FaCloud,
 } from "react-icons/fa";
 import appleBg from "../assets/apple-bg.png";
 
 const domains = [
   {
-    title: "iOS Development",
-    icon: FaAppStoreIos,
-    hoverDescription:
-      "Learn more about our iOS Development domain.\n\nClick to know more!",
-    description:
-      "Join our iOS Development domain to master Swift and SwiftUI through exciting projects and workshops. We build innovative apps for iPhones and iPads, exploring ARKit for augmented reality and Core ML for AI features. Members collaborate on real-world applications, from concept to App Store, learning best practices in mobile development and Apple ecosystem integration.",
-  },
-  {
-    title: "Android Development",
+    title: "Mobile Development",
     icon: FaAndroid,
     hoverDescription:
-      "Learn more about our Android Development domain.\n\nClick to know more!",
+      "Learn more about our Mobile Development domain.\n\nClick to know more!",
     description:
-      "Dive into Android Development with our domain covering Kotlin, Java, and modern architecture. We build engaging mobile apps using Material Design and Firebase integration. Members collaborate on location-based apps, camera features, and offline capabilities while learning security, performance optimization, and cross-device compatibility.",
+      "Build modern mobile applications for both Android and iOS using Kotlin, Java, Swift, and SwiftUI. Members explore native app development, Firebase integration, REST APIs, offline storage, notifications, and responsive UI design. Through hands-on projects and workshops, you'll learn how to design, develop, test, and deploy production-ready mobile applications while following industry best practices.",
   },
   {
     title: "Web Development",
@@ -32,7 +23,7 @@ const domains = [
     hoverDescription:
       "Learn more about our Web Development domain.\n\nClick to know more!",
     description:
-      "Our Web Development domain empowers members to build dynamic websites and applications using React, Vue, and Angular. We explore the MERN stack with Node.js and MongoDB for full-stack development. Through workshops and team projects, we focus on responsive design, API integration, security practices, and agile methodologies to create modern, accessible web solutions.",
+      "Our Web Development domain empowers members to build modern, full-stack web applications using technologies like React, Next.js, Node.js, Express, and databases such as MongoDB and PostgreSQL. Members gain experience in responsive design, REST APIs, authentication, deployment, and scalable application architecture while collaborating on real-world projects.",
   },
   {
     title: "Machine Learning",
@@ -40,7 +31,15 @@ const domains = [
     hoverDescription:
       "Learn more about our Machine Learning domain.\n\nClick to know more!",
     description:
-      "Explore the world of AI and Machine Learning in our domain, where we use Python frameworks like TensorFlow and PyTorch. Members learn deep learning, NLP, and computer vision through hands-on projects and research. We build recommendation systems and predictive models, emphasizing ethical AI practices and deployment on cloud platforms like AWS and GCP.",
+      "Explore Artificial Intelligence and Machine Learning through hands-on projects using Python, TensorFlow, PyTorch, and Scikit-learn. Members learn concepts such as deep learning, computer vision, natural language processing, and data analytics while building intelligent systems and deploying ML models using modern cloud platforms.",
+  },
+  {
+    title: "Cloud Computing",
+    icon: FaCloud,
+    hoverDescription:
+      "Learn more about our Cloud Computing domain.\n\nClick to know more!",
+    description:
+      "Learn how modern applications are deployed and managed on the cloud using platforms like AWS. Members gain practical experience with EC2, S3, Lambda, IAM, CloudFront, API Gateway, Docker, Kubernetes, CI/CD pipelines, Infrastructure as Code, monitoring, and scalable system design. Through real-world projects, you'll understand how to build secure, reliable, and highly available cloud-native applications.",
   },
 ];
 
