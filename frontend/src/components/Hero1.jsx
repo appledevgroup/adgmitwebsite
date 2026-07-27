@@ -32,11 +32,11 @@ const Hero = () => {
             {/* Logo */}
             <div className="inline-block mb-6">
               <img
-                src="/logo.svg"
+                src="/logo1.jpeg"
                 alt="ADG Logo"
                 className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl shadow-xl mx-auto
                            transform hover:scale-105 transition-transform duration-300
-                           object-contain"
+                           object-cover"
               />
             </div>
 

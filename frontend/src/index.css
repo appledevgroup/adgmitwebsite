@@ -7,7 +7,8 @@
 
 @layer base {
   body {
-    @apply bg-creme-light text-black;
+    @apply bg-creme-light text-black dark:bg-softBlack dark:text-white transition-colors duration-300;
+
     font-family:
       "Plus Jakarta Sans",
       "Inter",
@@ -22,6 +23,7 @@
       "Droid Sans",
       "Helvetica Neue",
       sans-serif;
+
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -43,8 +45,8 @@
   }
 
   p {
+    @apply text-gray-800 dark:text-gray-300;
     line-height: 1.7;
-    color: #292929;
   }
 }
 
