@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import axios from "axios";
-import { Instagram, Linkedin, Github, Twitter } from "lucide-react";
+import { Instagram, Linkedin, Github } from "lucide-react";
 import appleBg from "../assets/apple-bg.png";
 
 const Contact = () => {
@@ -43,15 +43,19 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative py-20"
-      style={{
-        backgroundImage: `url(${appleBg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "local",
-      }}
+      className="relative py-20
+                bg-[url('../assets/apple-bg.png')]
+                bg-cover
+                bg-center
+                dark:bg-none
+                dark:bg-black"
     >
-      <div className="absolute inset-0 bg-white/70 backdrop-blur-sm" />
+      <div
+        className="absolute inset-0
+                  bg-white/55
+                  dark:bg-black/65
+                  transition-colors duration-300"
+      />
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <motion.div
@@ -64,7 +68,7 @@ const Contact = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="text-gradient">Get in Touch</span>
           </h2>
-          <p className="text-xl text-black max-w-3xl mx-auto">
+          <p className="text-xl text-gray-800 dark:text-gray-300 max-w-3xl mx-auto">
             Have questions or feedback? We'd love to hear from you!
           </p>
         </motion.div>
@@ -76,7 +80,16 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-xl shadow-lg border border-gray-100"
+            className="
+              bg-white/70
+              dark:bg-white/5
+              backdrop-blur-xl
+              p-8
+              rounded-xl
+              border
+              border-white/20
+              dark:border-white/10
+              shadow-xl"
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -87,7 +100,25 @@ const Contact = () => {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="input"
+                  className="
+                    w-full
+                    px-4
+                    py-3
+                    rounded-lg
+                    border
+                    border-gray-300
+                    dark:border-gray-700
+                    bg-white
+                    dark:bg-gray-900
+                    text-gray-900
+                    dark:text-white
+                    placeholder:text-gray-400
+                    dark:placeholder:text-gray-500
+                    focus:outline-none
+                    focus:ring-2
+                    focus:ring-black
+                    dark:focus:ring-white
+                    transition-all"
                 />
                 <input
                   type="email"
@@ -96,7 +127,25 @@ const Contact = () => {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="input"
+                  className="
+                    w-full
+                    px-4
+                    py-3
+                    rounded-lg
+                    border
+                    border-gray-300
+                    dark:border-gray-700
+                    bg-white
+                    dark:bg-gray-900
+                    text-gray-900
+                    dark:text-white
+                    placeholder:text-gray-400
+                    dark:placeholder:text-gray-500
+                    focus:outline-none
+                    focus:ring-2
+                    focus:ring-black
+                    dark:focus:ring-white
+                    transition-all"
                 />
               </div>
 
@@ -107,7 +156,25 @@ const Contact = () => {
                 required
                 value={formData.subject}
                 onChange={handleChange}
-                className="input"
+                className="
+                  w-full
+                  px-4
+                  py-3
+                  rounded-lg
+                  border
+                  border-gray-300
+                  dark:border-gray-700
+                  bg-white
+                  dark:bg-gray-900
+                  text-gray-900
+                  dark:text-white
+                  placeholder:text-gray-400
+                  dark:placeholder:text-gray-500
+                  focus:outline-none
+                  focus:ring-2
+                  focus:ring-black
+                  dark:focus:ring-white
+                  transition-all"
               />
 
               <textarea
@@ -117,15 +184,34 @@ const Contact = () => {
                 required
                 value={formData.message}
                 onChange={handleChange}
-                className="input resize-none"
+                className="
+                  w-full
+                  px-4
+                  py-3
+                  rounded-lg
+                  border
+                  border-gray-300
+                  dark:border-gray-700
+                  bg-white
+                  dark:bg-gray-900
+                  text-gray-900
+                  dark:text-white
+                  placeholder:text-gray-400
+                  dark:placeholder:text-gray-500
+                  resize-none
+                  focus:outline-none
+                  focus:ring-2
+                  focus:ring-black
+                  dark:focus:ring-white
+                  transition-all"
               />
 
               {submitStatus && (
                 <div
                   className={`p-4 rounded-lg ${
                     submitStatus.type === "success"
-                      ? "bg-green-50 text-green-800"
-                      : "bg-red-50 text-red-800"
+                      ? "bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300"
+                      : "bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300"
                   }`}
                 >
                   {submitStatus.message}
@@ -134,15 +220,29 @@ const Contact = () => {
 
               <button
                 type="submit"
-                disabled={isSubmitting}
-                className="w-full px-8 py-4 bg-white text-black font-semibold rounded-lg shadow-lg hover:shadow-xl border-2 border-black transition-all duration-300 disabled:opacity-50"
+                disabled={isSubmitting} className="
+                  w-full
+                  px-8
+                  py-4
+                  bg-white
+                  dark:bg-white
+                  text-black
+                  font-semibold
+                  rounded-lg
+                  border-2
+                  border-black
+                  shadow-lg
+                  hover:shadow-xl
+                  transition-all
+                  duration-300
+                  disabled:opacity-50"  
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
               </button>
 
               {/* FOLLOW US */}
               <div className="pt-8">
-                <p className="text-lg font-semibold text-black mb-4 text-center">
+                <p className="text-lg font-semibold text-gray-900 dark:text-white mb-4 text-center">
                   Follow us
                 </p>
 
@@ -152,7 +252,10 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram"
-                    className="text-black hover:text-gray-600 transition-colors duration-200"
+                    className="text-gray-900
+                    dark:text-gray-200
+                    hover:text-gray-600
+                    dark:hover:text-white transition-colors duration-200"
                   >
                     <Instagram size={28} strokeWidth={1.5} />
                   </a>
@@ -162,7 +265,10 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="LinkedIn"
-                    className="text-black hover:text-gray-600 transition-colors duration-200"
+                    className="text-gray-900
+                    dark:text-gray-200
+                    hover:text-gray-600
+                    dark:hover:text-white transition-colors duration-200"
                   >
                     <Linkedin size={28} strokeWidth={1.5} />
                   </a>
@@ -172,7 +278,10 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="GitHub"
-                    className="text-black hover:text-gray-600 transition-colors duration-200"
+                    className="text-gray-900
+                    dark:text-gray-200
+                    hover:text-gray-600
+                    dark:hover:text-white transition-colors duration-200"
                   >
                     <Github size={28} strokeWidth={1.5} />
                   </a>
@@ -184,7 +293,7 @@ const Contact = () => {
       </div>
 
       {/* Shared input styles */}
-      <style>{`
+      {/* <style>{`
         .input {
           width: 100%;
           padding: 0.75rem 1rem;
@@ -197,7 +306,7 @@ const Contact = () => {
           border-color: black;
           box-shadow: 0 0 0 2px rgba(0,0,0,0.08);
         }
-      `}</style>
+      `}</style> */}
     </section>
   );
 };

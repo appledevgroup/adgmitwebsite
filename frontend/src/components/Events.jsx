@@ -72,7 +72,14 @@ const Events = () => {
     setCurrentIndex((s) => ({ ...s, [id]: (s[id] + 1) % total }))
 
   return (
-    <section id="events" className="py-20 bg-gradient-to-br from-creme-light to-creme-lightest">
+    <section id="events" className="py-20
+            bg-gradient-to-br
+            from-creme-light
+            to-creme-lightest
+            dark:from-softBlack
+            dark:to-gray-950
+            transition-colors duration-300"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -84,7 +91,7 @@ const Events = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="text-gradient">Events & Activities</span>
           </h2>
-          <p className="text-xl text-gray-800 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-800 dark:text-gray-300 max-w-3xl mx-auto">
             Join us for exciting events, workshops, and competitions throughout the year.
           </p>
         </motion.div>
@@ -101,10 +108,22 @@ const Events = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -5 }}
-                className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100"
+                className="
+                bg-white
+                dark:bg-gray-900
+                rounded-xl
+                overflow-hidden
+                border
+                border-gray-100
+                dark:border-gray-800
+                shadow-lg
+                hover:shadow-2xl
+                hover:-translate-y-1
+                transition-all
+                duration-300"
               >
                 {/* Image Carousel */}
-                <div className="relative w-full h-52 bg-gray-100 overflow-hidden">
+                <div className="relative w-full h-52 bg-gray-100 dark:bg-gray-800 overflow-hidden">
                   <img
                     src={event.images[idx]}
                     alt={`${event.title} photo ${idx + 1}`}
@@ -114,9 +133,12 @@ const Events = () => {
                   {/* Prev button */}
                   <button
                     onClick={() => prev(event.id, total)}
-                    className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full w-8 h-8 flex items-center justify-center shadow transition"
+                    className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80
+                    dark:bg-black/60
+                    hover:bg-white
+                    dark:hover:bg-black/80 rounded-full w-8 h-8 flex items-center justify-center shadow transition"
                   >
-                    <svg className="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 text-gray-700 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                     </svg>
                   </button>
@@ -124,9 +146,12 @@ const Events = () => {
                   {/* Next button */}
                   <button
                     onClick={() => next(event.id, total)}
-                    className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full w-8 h-8 flex items-center justify-center shadow transition"
+                    className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80
+                    dark:bg-black/60
+                    hover:bg-white
+                    dark:hover:bg-black/80 rounded-full w-8 h-8 flex items-center justify-center shadow transition"
                   >
-                    <svg className="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 text-gray-700 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </button>
@@ -146,26 +171,45 @@ const Events = () => {
                   <span className={`absolute top-3 left-3 px-3 py-1 rounded-full text-sm font-semibold ${getStatusColor(event.status)}`}>
                     {event.status}
                   </span>
-                  <span className="absolute top-3 right-3 text-sm text-gray-800 font-medium bg-white/80 px-2 py-0.5 rounded-full">
+                  <span className="
+                    absolute
+                    top-3
+                    right-3
+                    text-sm
+                    font-medium
+                    text-gray-800
+                    dark:text-white
+                    bg-white/80
+                    dark:bg-black/60
+                    px-2
+                    py-0.5
+                    rounded-full"
+                  >
                     {event.category}
                   </span>
                 </div>
 
                 {/* Card Body */}
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold mb-3 text-gray-800">{event.title}</h3>
+                  <h3 className="text-2xl font-bold mb-3 text-gray-800 dark:text-white">{event.title}</h3>
 
-                  <div className="flex items-center text-gray-500 mb-4">
+                  <div className="flex items-center text-gray-500 dark:text-gray-400 mb-4">
                     <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
                     <span>{event.date}</span>
                   </div>
 
-                  <p className="text-gray-600 leading-relaxed">{event.description}</p>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{event.description}</p>
 
                   {event.status === 'Upcoming' && (
-                    <button className="mt-6 px-6 py-2 bg-creme text-gray-800 rounded-lg hover:bg-creme-dark transition-colors duration-200 font-medium">
+                    <button className="mt-6 px-6 py-2 bg-creme
+                      dark:bg-white
+                      text-gray-800
+                      dark:text-black
+                      hover:bg-creme-dark
+                      dark:hover:bg-gray-200
+                      dark:text-white rounded-lg hover:bg-creme-dark transition-colors duration-200 font-medium">
                       Register Now
                     </button>
                   )}
@@ -183,7 +227,7 @@ const Events = () => {
           transition={{ duration: 0.8 }}
           className="mt-16 text-center"
         >
-          <p className="text-lg text-gray-800 mb-6">
+          <p className="text-lg text-gray-800 dark:text-gray-300 mb-6">
             Want to stay updated with our latest events?
           </p>
           <button
@@ -191,7 +235,18 @@ const Events = () => {
               const element = document.querySelector('#contact')
               element?.scrollIntoView({ behavior: 'smooth' })
             }}
-            className="px-8 py-4 bg-white text-gray-800 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+            className="
+              px-8
+              py-4
+              bg-white
+              dark:bg-white
+              text-gray-800
+              font-semibold
+              rounded-lg
+              shadow-lg
+              hover:shadow-xl
+              transition-all
+              duration-300"
           >
             Join Our Community
           </button>

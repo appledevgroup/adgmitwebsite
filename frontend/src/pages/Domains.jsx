@@ -47,6 +47,24 @@ const domains = [
 const Domains = () => {
   const [expanded, setExpanded] = useState(null);
   const [clicked, setClicked] = useState(null);
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const updateTheme = () => {
+      setIsDark(document.documentElement.classList.contains("dark"));
+    };
+
+    updateTheme();
+
+    const observer = new MutationObserver(updateTheme);
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
@@ -54,25 +72,25 @@ const Domains = () => {
 
   return (
     <section
-      className="relative min-h-screen pt-32 pb-20"
+      className="relative min-h-screen pt-32 pb-20 bg-white dark:bg-black transition-colors duration-300"
       style={{
-        backgroundImage: `url(${appleBg})`,
+        backgroundImage: isDark ? "none" : `url(${appleBg})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "local",
       }}
-    >
-      <div className="absolute inset-0 bg-white/70 backdrop-blur-sm" />
+    > 
+      <div className="absolute inset-0 bg-white/60 dark:hidden" />
       <div className="relative z-10 container mx-auto px-4 text-center">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-4xl md:text-5xl font-bold mb-6 text-black"
+          className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white"
         >
           Our Domains
         </motion.h1>
 
-        <p className="text-black max-w-2xl mx-auto mb-12">
+        <p className="text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mb-12">
           Explore the technical domains we actively work in.
         </p>
 
@@ -80,16 +98,21 @@ const Domains = () => {
           {domains.map((domain, i) => (
             <motion.div
               key={i}
-              whileHover={{ scale: 1.03 }}
+              whileHover={{ scale: 1.02, y: -5 }}
               onMouseEnter={() => setExpanded(i)}
               onMouseLeave={() => setExpanded(null)}
               onClick={() => setClicked(clicked === i ? null : i)}
-              className={`p-8 rounded-xl shadow-lg text-left self-start min-h-[9rem] transition-all duration-300 cursor-pointer ${expanded === i ? "bg-gray-100 text-black border border-gray-300" : "bg-white text-black border border-gray-200 hover:bg-gray-50"}`}
+              className={`p-8 rounded-xl shadow-xl text-left self-start min-h-[9rem] transition-all duration-300 cursor-pointer
+                ${
+                  expanded === i
+                    ? "bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700"
+                    : "bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800"
+                }`}
             >
               <div className="flex justify-center mb-3">
-                <domain.icon className="text-5xl text-black" />
+                <domain.icon className="text-5xl text-gray-700 dark:text-gray-300" />
               </div>
-              <h3 className="text-2xl font-semibold mb-3 text-center text-black">
+              <h3 className="text-2xl font-semibold mb-3 text-center text-gray-700 dark:text-gray-300">
                 {domain.title}
               </h3>
               <motion.div
@@ -102,7 +125,7 @@ const Domains = () => {
                 transition={{ duration: 0.3 }}
                 style={{ overflow: "hidden" }}
               >
-                <p className="text-black text-center">
+                <p className="text-gray-900 dark:text-white text-center">
                   {clicked === i ? domain.description : domain.hoverDescription}
                 </p>
               </motion.div>
