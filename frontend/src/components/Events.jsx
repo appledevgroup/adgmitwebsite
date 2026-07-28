@@ -11,48 +11,70 @@ import tech3 from '../assets/tech3.png'
 import ws1 from '../assets/ws1.png'
 import ws2 from '../assets/ws2.png'
 import ws3 from '../assets/ws3.png'
+import appathon1 from '../assets/appathon1.jpeg'
+import appathon2 from '../assets/appathon2.jpeg'
+import aws1 from '../assets/aws1.jpeg'
+import aws2 from '../assets/aws2.jpeg'
+
 
 const Events = () => {
   const events = [
-    {
-      id: 1,
-      title: 'General Body Meeting',
-      date: '2025',
-      description: 'First general body meeting of the Board with Mancomm of ADGs tenure 2025-2026.',
-      images: [
-        gbm2,gbm1,gbm3
-      ],
-    },
-    {
-      id: 2,
-      title: 'ADG Stall at ICT Gala',
-      date: 'September, 2025',
-      description: 'Showcasing our projects and engaging with the tech community at the ICT Gala.',
-      images: [
-        ict1,ict2
-      ],
-    },
-    {
-      id: 3,
-      title: 'Events at TechTatva 2025',
-      date: 'October, 2025',
-      description: 'workshops and competitions at TechTatva, the annual tech fest of MIT, Manipal.',
-      category: 'Fest',
-      images: [
-        tech1,tech2,tech3
-      ],
-    },
-    {
-      id: 4,
-      title: 'Frontend UI/UX & IOS Workshop',
-      date: '2026',
-      description: 'workshops covering frontend development, UI/UX design principles, and iOS app development.',
-      category: 'Workshop',
-      images: [
-        ws1,ws2,ws3
-      ],
-    },
-  ]
+  {
+    id: 1,
+    title: "Appathon",
+    date: "2026",
+    description: "Appathon conducted by ADG, bringing together developers to build innovative applications.",
+    images: [
+      appathon1, appathon2
+    ],
+  },
+  {
+    id: 2,
+    title: "AWS Workshop",
+    date: "2026",
+    description: "Workshop conducted by Manav covering the planned technical topics.",
+    images: [
+      aws1, aws2
+    ],
+  },
+  {
+    id: 3,
+    title: "Frontend UI/UX & iOS Workshop",
+    date: "2026",
+    description: "Workshops covering frontend development, UI/UX design principles, and iOS app development.",
+    images: [
+      ws1, ws2, ws3
+    ],
+  },
+  {
+    id: 4,
+    title: "ADG Stall at ICT Gala",
+    date: "September, 2025",
+    description: "Showcasing our projects and engaging with the tech community at the ICT Gala.",
+    images: [
+      ict1, ict2
+    ],
+  },
+  {
+    id: 5,
+    title: "Events at TechTatva 2025",
+    date: "October, 2025",
+    description: "Workshops and competitions at TechTatva, the annual tech fest of MIT, Manipal.",
+    category: "Fest",
+    images: [
+      tech1, tech2, tech3
+    ],
+  },
+  {
+    id: 6,
+    title: "General Body Meeting",
+    date: "2025",
+    description: "First general body meeting of the Board with Mancomm of ADG's tenure 2025–2026.",
+    images: [
+      gbm2, gbm1, gbm3
+    ],
+  },
+];
 
   const getStatusColor = (status) => {
     return status === 'Upcoming'
