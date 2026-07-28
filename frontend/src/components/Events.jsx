@@ -32,7 +32,7 @@ const Events = () => {
     id: 2,
     title: "AWS Workshop",
     date: "2026",
-    description: "Conducted a technical workshop on Amazon Web Services (AWS), covering core cloud computing concepts and services.",
+    description: "Conducted a technical workshop on Amazon Web Services (AWS), covering core cloud computing concepts and servicesw.",
     images: [
       aws1, aws2
     ],
