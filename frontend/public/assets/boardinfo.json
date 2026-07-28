@@ -5,7 +5,7 @@
     "Instagram Link": "https://www.instagram.com/kamathanirudhh",
     "One Quote": "work hard. dream big.",
     "Board position": "President",
-    "Attach photo": "./anirudh.jpg"
+    "Attach photo": "https://drive.google.com/thumbnail?id=1OGK_hsX6aDgmoiDTuhbBfTde6E7yahcS"
   },
   {
     "Name": "Sangini Singh",
@@ -13,7 +13,7 @@
     "Instagram Link": "https://www.instagram.com/_sangini/",
     "One Quote": "Make it happen",
     "Board position": "Vice President",
-    "Attach photo": "/sangini.jpeg"
+    "Attach photo": "../boardMem/sangini.jpeg"
   },
   {
     "Name": "Gooty Mohammed Faiz",
@@ -21,7 +21,7 @@
     "Instagram Link": "https://www.instagram.com/gootymdfaiz",
     "One Quote": "One life, live it, right now.",
     "Board position": "General Secretary",
-    "Attach photo": "./faizz.jpeg"
+    "Attach photo": "https://drive.google.com/thumbnail?id=1FZtDzsvc2N-eHD5Y0yv18-EJmke-3xB6"
   },
   {
     "Name": "Simran Singhania",
@@ -37,7 +37,7 @@
     "Instagram Link": "https://www.instagram.com/shreyagupta0709?igsh=N2FhMjlqZnFmMDJ1",
     "One Quote": "Everything that you can imagine is real.",
     "Board position": "Technical head",
-    "Attach photo": "./shreya.png"
+    "Attach photo": "https://drive.google.com/thumbnail?id=1UmBwSUAAEEir2dWErS-awQU44KJ4NT1l"
   },
   {
     "Name": "Manav H Maheshwari",
@@ -45,7 +45,7 @@
     "Instagram Link": "https://www.instagram.com/manav_2468",
     "One Quote": "It's always a no until you ask",
     "Board position": "HR Head",
-    "Attach photo": "/manav.jpeg"
+    "Attach photo": "./boardMem/manav.jpeg"
   },
   {
     "Name": "Akshat Yuvan",
@@ -53,7 +53,7 @@
     "Instagram Link": "https://www.instagram.com/akshatyuvan/",
     "One Quote": "Life is short, try all the flavors",
     "Board position": "PR and Outreach",
-    "Attach photo": "/akshat.jpeg"
+    "Attach photo": "./boardMem/akshat.jpeg"
   },
   {
     "Name": "Diptarka Nandi",
@@ -70,15 +70,18 @@
     "Instagram Link": "https://www.instagram.com/upkirat_lol?igsh=NDcyczN6cDA0Y3lp",
     "One Quote": "Whenever I’m sad, I stop being sad and be awesome instead.",
     "Board position": "Web Development Head",
-    "Attach photo": "./upkirat.jpg"
+    "Attach photo": "https://drive.google.com/thumbnail?id=1JLp-NrLr5m0vTcOgoVOUPf5bG3PbpRim"
   },
+  
+  
+  
   {
     "Name": "Shlok Sharma",
     "Linkedin Profile link": "https://www.linkedin.com/in/shlok-sharma-8467b9312/",
     "Instagram Link": "https://www.instagram.com/shloksharma.13",
     "One Quote": "Android for Lunch, Apple for Dinner",
     "Board position": "Cross Platform App Dev Head",
-    "Attach photo": "./shlok.jpg"
+    "Attach photo": "https://drive.google.com/thumbnail?id=1TcGLYxoHM1Qpfa5sGvrJbG_nbuIYggGN"
   },
   {
     "Name": "Sourav",
@@ -86,7 +89,7 @@
     "Instagram Link": "https://www.instagram.com/Sourav_sg",
     "One Quote": "Hi there, developer!",
     "Board position": "IOS Dev Head",
-    "Attach photo": "./sourav.jpeg"
+    "Attach photo": "https://drive.google.com/thumbnail?id=1sRkwgZdBVuX4iNmhis39oGPFLy4AApNx"
   },
   {
     "Name": "Rishav Choudhary",
@@ -94,7 +97,7 @@
     "Instagram Link": "https://www.instagram.com/rishavkcy?igsh=N3hoM2s2MjhhN2Iw",
     "One Quote": "Differences make different.",
     "Board position": "SMGD Head",
-    "Attach photo": "/rishav.jpeg"
+    "Attach photo": "./boardMem/rishav.jpeg"
   }
   
   
