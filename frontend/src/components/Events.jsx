@@ -32,7 +32,7 @@ const Events = () => {
     id: 2,
     title: "AWS Workshop",
     date: "2026",
-    description: "Workshop conducted by Manav covering the planned technical topics.",
+    description: "Workshop conducted on AWS.",
     images: [
       aws1, aws2
     ],
