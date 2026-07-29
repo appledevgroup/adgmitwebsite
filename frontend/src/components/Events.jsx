@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+wimport { motion } from 'framer-motion'
 import { useState } from 'react'
 import gbm1 from '../assets/gbm1.png'
 import gbm2 from '../assets/gbm2.png'
@@ -32,7 +32,7 @@ const Events = () => {
     id: 2,
     title: "AWS Workshop",
     date: "2026",
-    description: "Conducted a technical workshop on Amazon Web Services (AWS), covering core cloud computing concepts and servicesw.",
+    description: "Conducted a technical workshop on Amazon Web Services (AWS), covering core cloud computing concepts and services.",
     images: [
       aws1, aws2
     ],
