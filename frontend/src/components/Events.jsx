@@ -1,4 +1,4 @@
-wimport { motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useState } from 'react'
 import gbm1 from '../assets/gbm1.png'
 import gbm2 from '../assets/gbm2.png'
