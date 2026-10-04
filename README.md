@@ -2,7 +2,7 @@
 
 # ADG Website
 
-**The home of Application Development Group, MIT Manipal.**
+**The home of Apple Developer's Group, MIT Manipal.**
 Built by students, for students. Fast, animated, and open to contributions.
 
 [![Live](https://img.shields.io/badge/live-adgmit.com-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://adgmit.com)
