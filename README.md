@@ -1,88 +1,179 @@
+<div>
+
 # ADG Website
 
-built with the MERN stack (MongoDB, Express, React, Node.js) and Tailwind CSS.
+**The home of Application Development Group, MIT Manipal.**
+Built by students, for students. Fast, animated, and open to contributions.
 
-## Tech Stack
+[![Live](https://img.shields.io/badge/live-adgmit.com-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://adgmit.com)
+[![License](https://img.shields.io/github/license/appledevgroup/adgmitwebsite?style=for-the-badge)](./LICENSE)
 
-- **Frontend**: React 18, Vite, Tailwind CSS, Framer Motion, Axios
-- **Backend**: Node.js, Express.js
-- **Database**: MongoDB with Mongoose
-- **Styling**: Tailwind CSS with custom gradients and animations
+![React](https://img.shields.io/badge/React_18-20232A?style=flat-square&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
+![Tailwind](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=flat-square&logo=framer&logoColor=white)
+![Node](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
 
-## Project Structure
+</div>
+
+---
+
+## Why this exists
+
+ADG is a student developer org and the website is its front door. It shows what we build, who we are and what is coming up next. It is also a real codebase that members can learn from and ship to, so it is kept open and beginner friendly on purpose.
+
+## Tech stack
+
+| Layer | Tools |
+| --- | --- |
+| Frontend | React 18, Vite, Tailwind CSS, Framer Motion, Axios |
+| Backend | Node.js, Express.js |
+| Database | MongoDB with Mongoose |
+| Hosting | Vercel |
+
+## How it fits together
+
+```mermaid
+flowchart LR
+    U([Browser]) --> F[React + Vite<br/>Tailwind, Framer Motion]
+    F -- Axios --> B[Express API<br/>:5000]
+    B -- Mongoose --> D[(MongoDB)]
+    F -. deployed on .-> V{{Vercel}}
+```
+
+## Project structure
 
 ```
-ADG Website/
-├── frontend/          # React + Vite frontend
+adgmitwebsite/
+├── frontend/              # React + Vite app
 │   ├── src/
-│   │   ├── components/    # React components
-│   │   ├── App.jsx        # Main app component
-│   │   └── main.jsx      # Entry point
+│   │   ├── components/    # UI sections (Header, Hero, About, Events, Contact, Footer)
+│   │   ├── App.jsx        # Root component
+│   │   ├── main.jsx       # Entry point
+│   │   └── index.css      # Global styles
 │   └── package.json
-├── backend/           # Express.js backend
-│   ├── server.js      # Express server
+├── backend/               # Express API
+│   ├── server.js
 │   └── package.json
-└── package.json       # Root package.json
+├── CONTRIBUTING.md
+└── package.json           # Root scripts
 ```
 
-## Getting Started
+## Getting started
 
 ### Prerequisites
 
-- Node.js (v18 or higher)
-- MongoDB (local installation or MongoDB Atlas account)
+- Node.js v18 or higher
+- MongoDB (local install or a MongoDB Atlas cluster)
 - npm or yarn
 
-### Installation
+### 1. Clone and install
 
-1. **Install all dependencies:**
+```bash
+git clone https://github.com/appledevgroup/adgmitwebsite.git
+cd adgmitwebsite
+npm run install-all
+```
 
-   ```bash
-   npm run install-all
-   ```
+Prefer doing it by hand?
 
-   Or install separately:
+```bash
+npm install
+cd frontend && npm install
+cd ../backend && npm install
+```
 
-   ```bash
-   npm install
-   cd frontend && npm install
-   cd ../backend && npm install
-   ```
+### 2. Set up environment variables
 
-2. **Start the development servers:**
+Create a `.env` file inside `backend/`:
 
-   run them separately by splitting terminal:
+```env
+MONGODB_URI=your_mongodb_connection_string
+PORT=5000
+```
 
-   ```bash
-   # Terminal 1 - Backend
-   cd backend
-   node server.js
+### 3. Run it
 
-   # Terminal 2 - Frontend
-   cd frontend
-   npm run dev
-   ```
+Split your terminal and run both servers:
 
-   frontend runs at: http://localhost:3000/
-   backend runs at: http://localhost:5000/
+```bash
+# Terminal 1: backend
+cd backend
+node server.js
 
-## Customization
+# Terminal 2: frontend
+cd frontend
+npm run dev
+```
 
-### Adding Your Club Logo
+| Service | URL |
+| --- | --- |
+| Frontend | http://localhost:3000 |
+| Backend | http://localhost:5000 |
 
-1. Place your logo file in `frontend/public/logo.png` (or any image format)
-2. Update the logo in `frontend/src/components/Header.jsx`:
-   ```jsx
-   <img src="/logo.png" alt="ADG Logo" className="w-12 h-12" />
-   ```
+## Customizing for your club
 
-### Updating Club Information
+Forking this for your own org? Here is where things live.
 
-- **Club Name**: Update in `Header.jsx`, `Hero.jsx`, and `Footer.jsx`
-- **Stats**: Modify the `stats` array in `About.jsx`
-- **Events**: Update the `events` array in `Events.jsx`
-- **Contact Info**: Edit the `contactInfo` array in `Contact.jsx`
+<details>
+<summary><b>Logo</b></summary>
 
-### Styling
+Drop your logo at `frontend/public/logo.png`, then update `frontend/src/components/Header.jsx`:
 
-- Global styles: `frontend/src/index.css`
+```jsx
+<img src="/logo.png" alt="ADG Logo" className="w-12 h-12" />
+```
+
+</details>
+
+<details>
+<summary><b>Club info</b></summary>
+
+| What | Where |
+| --- | --- |
+| Club name | `Header.jsx`, `Hero.jsx`, `Footer.jsx` |
+| Stats | `stats` array in `About.jsx` |
+| Events | `events` array in `Events.jsx` |
+| Contact info | `contactInfo` array in `Contact.jsx` |
+
+</details>
+
+<details>
+<summary><b>Styling</b></summary>
+
+Global styles live in `frontend/src/index.css`. Theme tweaks (colors, gradients, animations) go in `tailwind.config.js`.
+
+</details>
+
+## Contributing
+
+We love new contributors, especially first timers. The short version:
+
+1. Fork the repo and create a branch: `git checkout -b feat/your-feature`
+2. Make your changes and keep commits focused
+3. Run the app locally and make sure nothing breaks
+4. Open a pull request with a clear description (screenshots help a lot for UI changes)
+
+Read the full guide in [CONTRIBUTING.md](./CONTRIBUTING.md) before you start.
+
+**Commit style**
+
+```
+feat: add events carousel
+fix: board members card overflow on mobile
+docs: update setup steps
+```
+
+## Contributors
+
+Thanks to everyone who has helped build this.
+
+<a href="https://github.com/appledevgroup/adgmitwebsite/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=appledevgroup/adgmitwebsite" alt="Contributors" />
+</a>
+
+## Maintainer
+
+Maintained by [@ADG MIT-M](https://github.com/appledevgroup)
