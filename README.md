@@ -49,10 +49,6 @@ ADG Website/
    cd ../backend && npm install
    ```
 
-   ```
-
-   ```
-
 2. **Start the development servers:**
 
    run them separately by splitting terminal:
